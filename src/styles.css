@@ -9,8 +9,10 @@
 :root {
   --main-color: #323232;
 
-  --neu1: #242424;
-  --neu2: #404040;
+  --second-color: white;
+
+  --neu1: rgba(0, 0, 0, 0.3);
+  --neu2: rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -31,7 +33,7 @@ h1 {
   padding: 0;
   margin: 0;
   margin-bottom: 0.5rem;
-  color: white;
+  color: var(--second-color);
   border: medium;
 }
 
@@ -74,7 +76,7 @@ h1 {
   background-color: var(--main-color);
 
   font-size: 1.4rem;
-  color: white;
+  color: var(--second-color);
 
   border: none;
 
