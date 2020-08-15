@@ -117,3 +117,18 @@ h1 {
     inset calc(var(--buttonNeu) * -1) calc(var(--buttonNeu) * -1)
       calc(var(--buttonNeu) * 2) var(--neu2);
 }
+
+.submitButton:disabled {
+  box-shadow: none;
+  background-image: url("./LoadingIcon.svg");
+  animation: rotate 1s infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
