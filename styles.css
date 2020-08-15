@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  user-select: none;
+}
+
+:root {
+  --main-color: #323232;
+
+  --neu1: #242424;
+  --neu2: #404040;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-color: var(--main-color);
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 5vw;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  color: white;
+  border: medium;
+}
+
+.container {
+  width: 60%;
+  max-width: 50rem;
+  height: auto;
+
+  padding: 2rem;
+
+  background-color: var(--main-color);
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+
+  border-radius: 1rem;
+  --conNeu: 0.3rem;
+  box-shadow: var(--conNeu) var(--conNeu) calc(var(--conNeu) * 2) var(--neu1),
+    calc(var(--conNeu) * -1) calc(var(--conNeu) * -1) calc(var(--conNeu) * 2)
+      var(--neu2);
+}
+
+@media (orientation: portrait) {
+  h1 {
+    font-size: 10vw;
+  }
+  .container {
+    width: 90%;
+  }
+}
+
+.container * {
+  margin: 0.5rem;
+}
+
+.linkInput {
+  width: 80%;
+  background-color: var(--main-color);
+
+  font-size: 1.4rem;
+  color: white;
+
+  border: none;
+
+  border-radius: 0.5rem;
+  --inputNeu: 0.1rem;
+  box-shadow: var(--inputNeu) var(--inputNeu) calc(var(--inputNeu) * 2)
+      var(--neu1),
+    calc(var(--inputNeu) * -1) calc(var(--inputNeu) * -1)
+      calc(var(--inputNeu) * 2) var(--neu2);
+}
+.linkInput:focus {
+  box-shadow: inset var(--inputNeu) var(--inputNeu) calc(var(--inputNeu) * 2)
+      var(--neu1),
+    inset calc(var(--inputNeu) * -1) calc(var(--inputNeu) * -1)
+      calc(var(--inputNeu) * 2) var(--neu2);
+}
+
+.submitButton {
+  transition: all ease-in-out 200ms;
+  background-color: var(--main-color);
+  border: none;
+  height: 4rem;
+  width: 4rem;
+  color: rgba(0, 0, 0, 0);
+  background-image: url("./PlayIcon.svg");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  --buttonNeu: 0.1rem;
+  box-shadow: var(--buttonNeu) var(--buttonNeu) calc(var(--buttonNeu) * 2)
+      var(--neu1),
+    calc(var(--buttonNeu) * -1) calc(var(--buttonNeu) * -1)
+      calc(var(--buttonNeu) * 2) var(--neu2);
+}
+
+.submitButton:active {
+  box-shadow: inset var(--buttonNeu) var(--buttonNeu) calc(var(--buttonNeu) * 2)
+      var(--neu1),
+    inset calc(var(--buttonNeu) * -1) calc(var(--buttonNeu) * -1)
+      calc(var(--buttonNeu) * 2) var(--neu2);
+}
