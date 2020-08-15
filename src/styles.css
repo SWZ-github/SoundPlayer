@@ -92,14 +92,13 @@ h1 {
       calc(var(--inputNeu) * 2) var(--neu2);
 }
 
-.submitButton {
-  transition: all ease-in-out 200ms;
+button {
+  transition: box-shadow ease-in-out 200ms;
   background-color: var(--main-color);
   border: none;
   height: 4rem;
   width: 4rem;
   color: rgba(0, 0, 0, 0);
-  background-image: url("./PlayIcon.svg");
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
@@ -111,14 +110,22 @@ h1 {
       calc(var(--buttonNeu) * 2) var(--neu2);
 }
 
-.submitButton:active {
+button:active {
   box-shadow: inset var(--buttonNeu) var(--buttonNeu) calc(var(--buttonNeu) * 2)
       var(--neu1),
     inset calc(var(--buttonNeu) * -1) calc(var(--buttonNeu) * -1)
       calc(var(--buttonNeu) * 2) var(--neu2);
 }
 
-.submitButton:disabled {
+.stopButton {
+  background-image: url("./StopIcon.svg");
+}
+
+.playButton {
+  background-image: url("./PlayIcon.svg");
+}
+
+.playButton:disabled {
   box-shadow: none;
   background-image: url("./LoadingIcon.svg");
   animation: rotate 1s infinite;
