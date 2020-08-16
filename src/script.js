@@ -30,6 +30,11 @@ playButton.onclick = async () => {
 
   currentSound.play();
 
+  if (currentSound) {
+    currentSound.volume = Number(slider.value) / 100;
+  }
+  console.log(Number(slider.value) / 100);
+
   currentSound.addEventListener("ended", (ev) => {
     if (looping) {
       currentSound.play();
