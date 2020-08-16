@@ -149,6 +149,32 @@ h1 {
   animation: rotate 1s infinite;
 }
 
+.slider {
+  width: 50%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 1rem;
+  background-color: transparent;
+  --buttonNeu: 0.3rem;
+  box-shadow: var(--buttonNeu) var(--buttonNeu) calc(var(--buttonNeu) * 2)
+      var(--neu1),
+    calc(var(--buttonNeu) * -1) calc(var(--buttonNeu) * -1)
+      calc(var(--buttonNeu) * 2) var(--neu2);
+}
+
+.slider::-webkit-slider-thumb,
+.slider::-moz-range-thumb,
+.slider::-ms-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  width: 1rem;
+  height: 1rem;
+  color: var(--second-color);
+  background-color: var(--second-color);
+  border-radius: 50%;
+}
+
 @keyframes rotate {
   from {
     transform: rotate(0deg);

@@ -13,34 +13,49 @@ function killSound() {
   currentSound = undefined;
 }
 
-document.querySelector("button.playButton").onclick = async () => {
+let playButton = document.querySelector("button.playButton");
+playButton.onclick = async () => {
   let link = document.querySelector("input.linkInput").value;
 
   if (currentSound) {
     killSound();
   }
 
-  document.querySelector("button.playButton").disabled = true;
+  playButton.disabled = true;
   currentSound = new Audio(link);
 
   await sleep(500);
 
-  document.querySelector("button.playButton").disabled = false;
+  playButton.disabled = false;
 
   currentSound.play();
 
   currentSound.addEventListener("ended", (ev) => {
     if (looping) {
       currentSound.play();
+    } else {
+      killSound();
     }
   });
 };
-document.querySelector("button.stopButton").onclick = killSound;
-document.querySelector("button.loopButton").onclick = async () => {
+
+let stopButton = document.querySelector("button.stopButton");
+stopButton.onclick = killSound;
+
+let loopButton = document.querySelector("button.loopButton");
+loopButton.onclick = async () => {
   looping = !looping;
   if (looping) {
-    document.querySelector("button.loopButton").classList.add("active");
+    loopButton.classList.add("active");
   } else {
-    document.querySelector("button.loopButton").classList.remove("active");
+    loopButton.classList.remove("active");
   }
+};
+
+let slider = document.querySelector('input[type="range"].slider');
+slider.oninput = async () => {
+  if (currentSound) {
+    currentSound.volume = Number(slider.value) / 100;
+  }
+  console.log(Number(slider.value) / 100);
 };
