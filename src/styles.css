@@ -94,7 +94,7 @@ h1 {
       calc(var(--inputNeu) * 2) var(--neu2);
 }
 
-button {
+.button {
   transition: box-shadow ease-in-out 200ms;
   background-color: var(--main-color);
   border: none;
@@ -112,15 +112,31 @@ button {
       calc(var(--buttonNeu) * 2) var(--neu2);
 }
 
-button:active {
+.button:active {
   box-shadow: inset var(--buttonNeu) var(--buttonNeu) calc(var(--buttonNeu) * 2)
       var(--neu1),
     inset calc(var(--buttonNeu) * -1) calc(var(--buttonNeu) * -1)
       calc(var(--buttonNeu) * 2) var(--neu2);
 }
 
+.button:hover {
+  cursor: pointer;
+}
+
 .stopButton {
   background-image: url("./StopIcon.svg");
+}
+
+.loopButton {
+  background-image: url("./LoopIcon.svg");
+}
+
+.loopButton.active {
+  box-shadow: none;
+
+  animation: rotate 5s infinite;
+  animation-direction: reverse;
+  animation-timing-function: linear;
 }
 
 .playButton {
