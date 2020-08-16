@@ -133,6 +133,10 @@ button:active {
   animation: rotate 1s infinite;
 }
 
+.loopButton {
+  background-image: url("./LoopIcon.png");
+}
+
 @keyframes rotate {
   from {
     transform: rotate(0deg);
