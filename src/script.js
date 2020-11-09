@@ -5,9 +5,11 @@ async function sleep(t) {
 }
 
 const urlParams = new URLSearchParams(window.location.search);
-document.querySelector(".linkInput").value = urlParams.get("myParam")
+document.querySelector(".linkInput").value = urlParams.get("file")
   ? urlParams.get("file")
   : "";
+
+console.log(urlParams.get("myParam"));
 
 let currentSound;
 let looping = false;
