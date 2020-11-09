@@ -4,6 +4,11 @@ async function sleep(t) {
   });
 }
 
+const urlParams = new URLSearchParams(window.location.search);
+document.querySelector(".linkInput").value = urlParams.get("myParam")
+  ? urlParams.get("file")
+  : "";
+
 let currentSound;
 let looping = false;
 
